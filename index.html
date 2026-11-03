@@ -1,48 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omar's Barbershop - Book Online</title>
+  <title>Book Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
+  <!-- App settings (PWA) -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1f1f1f">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ahmed Barber">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
 </head>
 <body>
+  <!-- Top bar -->
+  <nav class="topbar">
+    <button class="icon-btn" id="menu-open" aria-label="Menu">&#9776;</button>
+    <span class="shop-name topbar-title"></span>
+    <button class="lang-toggle" data-i18n="langButton"></button>
+  </nav>
+
+  <!-- Side menu -->
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <button class="icon-btn close" id="menu-close" aria-label="Close">&times;</button>
+    <h2 class="shop-name"></h2>
+    <h3 data-i18n="ourBranches"></h3>
+    <div id="drawer-branches"></div>
+    <h3 data-i18n="contactUs"></h3>
+    <div class="contact-links" id="drawer-contact"></div>
+  </aside>
+
   <header class="hero">
-    <h1>Omar's Barbershop</h1>
-    <p>Nasr City, Cairo &middot; Open daily 12:00 PM &ndash; 10:00 PM</p>
+    <h1 class="shop-name"></h1>
+    <p data-i18n="tagline"></p>
+    <p class="hours" data-i18n="hours"></p>
   </header>
 
   <main class="container">
     <section>
-      <h2>Our services</h2>
+      <h2 data-i18n="ourServices"></h2>
       <div id="services" class="services"></div>
     </section>
 
     <section>
-      <h2>Book your appointment</h2>
+      <h2 data-i18n="bookTitle"></h2>
       <form id="booking-form" class="card">
-        <label>Your name
-          <input type="text" id="name" required>
+        <label><span data-i18n="branch"></span>
+          <select id="branch" required></select>
         </label>
-        <label>Phone number
-          <input type="tel" id="phone" placeholder="01xxxxxxxxx" required>
+        <label><span data-i18n="barber"></span>
+          <select id="barber" required></select>
         </label>
-        <label>Service
+        <label><span data-i18n="service"></span>
           <select id="service" required></select>
         </label>
-        <label>Day
+        <label><span data-i18n="day"></span>
           <input type="date" id="date" required>
         </label>
-        <label>Time
+        <label><span data-i18n="time"></span>
           <select id="time" required></select>
         </label>
-        <button type="submit">Book now</button>
+        <label><span data-i18n="yourName"></span>
+          <input type="text" id="name" required>
+        </label>
+        <label><span data-i18n="phone"></span>
+          <input type="tel" id="phone" placeholder="01xxxxxxxxx" pattern="01[0-9]{9}" dir="ltr" required>
+        </label>
+        <button type="submit" id="submit-btn" data-i18n="bookNow"></button>
         <p id="message" class="message"></p>
       </form>
     </section>
   </main>
 
+  <footer class="footer" id="footer"></footer>
+
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="menu.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

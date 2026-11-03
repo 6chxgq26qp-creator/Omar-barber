@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank you</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1f1f1f">
+</head>
+<body>
+  <nav class="topbar">
+    <button class="icon-btn" id="menu-open" aria-label="Menu">&#9776;</button>
+    <span class="shop-name topbar-title"></span>
+    <button class="lang-toggle" data-i18n="langButton"></button>
+  </nav>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="drawer" id="drawer">
+    <button class="icon-btn close" id="menu-close" aria-label="Close">&times;</button>
+    <h2 class="shop-name"></h2>
+    <h3 data-i18n="ourBranches"></h3>
+    <div id="drawer-branches"></div>
+    <h3 data-i18n="contactUs"></h3>
+    <div class="contact-links" id="drawer-contact"></div>
+  </aside>
+
+  <main class="container thanks">
+    <div class="check">&#10003;</div>
+    <h1 id="thanks-title"></h1>
+    <p data-i18n="thanksText"></p>
+
+    <div class="card details">
+      <h2 data-i18n="details"></h2>
+      <div id="details"></div>
+    </div>
+
+    <div class="thanks-actions" id="actions"></div>
+    <a class="button" href="index.html" data-i18n="bookAnother"></a>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+
+  <script src="config.js"></script>
+  <script src="i18n.js"></script>
+  <script src="menu.js"></script>
+  <script src="thanks.js"></script>
+</body>
+</html>
