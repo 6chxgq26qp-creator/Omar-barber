@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omar's Barbershop - Book Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Omar's Barbershop</h1>
+    <p>Nasr City, Cairo &middot; Open daily 12:00 PM &ndash; 10:00 PM</p>
+  </header>
+
+  <main class="container">
+    <section>
+      <h2>Our services</h2>
+      <div id="services" class="services"></div>
+    </section>
+
+    <section>
+      <h2>Book your appointment</h2>
+      <form id="booking-form" class="card">
+        <label>Your name
+          <input type="text" id="name" required>
+        </label>
+        <label>Phone number
+          <input type="tel" id="phone" placeholder="01xxxxxxxxx" required>
+        </label>
+        <label>Service
+          <select id="service" required></select>
+        </label>
+        <label>Day
+          <input type="date" id="date" required>
+        </label>
+        <label>Time
+          <select id="time" required></select>
+        </label>
+        <button type="submit">Book now</button>
+        <p id="message" class="message"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="app.js"></script>
+</body>
+</html>

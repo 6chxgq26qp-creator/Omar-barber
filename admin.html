@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barber Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>Bookings</h1>
+    <p id="count"></p>
+  </header>
+
+  <main class="container">
+    <form id="login-form" class="card">
+      <label>Email <input type="email" id="email" required></label>
+      <label>Password <input type="password" id="password" required></label>
+      <button type="submit">Log in</button>
+      <p id="login-error" class="message" style="color:#c62828"></p>
+    </form>
+
+    <div id="bookings" style="display:none">
+      <table>
+        <thead>
+          <tr><th>Day</th><th>Time</th><th>Name</th><th>Service</th><th></th></tr>
+        </thead>
+        <tbody id="list"></tbody>
+      </table>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

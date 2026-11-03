@@ -1,0 +1,68 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: #f4f1ec;
+  color: #222;
+  line-height: 1.5;
+}
+
+.hero {
+  background: #1f1f1f;
+  color: #fff;
+  text-align: center;
+  padding: 48px 16px;
+}
+.hero h1 { font-size: 2rem; margin-bottom: 8px; }
+.hero p { color: #c9a96e; }
+
+.container { max-width: 640px; margin: 0 auto; padding: 24px 16px; }
+h2 { margin: 24px 0 12px; }
+
+.services { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.service {
+  background: #fff;
+  border-radius: 10px;
+  padding: 16px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+.service strong { display: block; }
+.service span { color: #8a6d3b; font-weight: bold; }
+
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+label { display: block; margin-bottom: 14px; font-weight: 600; }
+input, select {
+  display: block;
+  width: 100%;
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  background: #c9a96e;
+  color: #1f1f1f;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { background: #b8955a; }
+.message { margin-top: 12px; font-weight: 600; color: #2e7d32; }
+
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { padding: 10px; border-bottom: 1px solid #eee; text-align: left; }
+.whatsapp { color: #25d366; font-weight: bold; text-decoration: none; }
+
+@media (max-width: 480px) {
+  .services { grid-template-columns: 1fr; }
+}
